@@ -25,3 +25,17 @@ const images = [
   },
 ];
 
+const galleryList = document.querySelector(".gallery");
+// 1 варіант
+const elementsArray = images.map((element) => {
+  const addListItem = document.createElement("li");
+  const addImage = document.createElement("img");
+  addImage.alt = element.alt;
+  addImage.src = element.url;
+  addImage.width = "360";
+  addImage.height = "300";
+  addListItem.appendChild(addImage);
+  return addListItem;
+});
+
+galleryList.append(...elementsArray);
